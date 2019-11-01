@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<!--  AppDynamics notification message for:  -->
+<!--  Account[${account.id}]: ${account.name}  -->
+<!--  Policy[${policy.id}]: ${policy.name}  -->
+<!--  Action[${action.id}]: ${action.name}  -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style type="text/css">
+        /* Client-specific Styles */
+        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+        .ReadMsgBody{width:500px;} .ExternalClass{width:500px;} /* Force Hotmail to display emails at full width */
+        /* a .yshortcuts */
+    </style>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="margin:0;padding:0;width:500px; margin-left: 180px; border: 1px solid #885; !important;-webkit-text-size-adjust:none;margin:0; padding:0;background-color:#e8e8e8;">
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="height:500px !important; margin:0; padding:20px 0 0 0; width:500px !important;background-color:#e8e8e8;">
+        <tr>
+            <td align="center" valign="top">
+
+                <!--  Banner -->
+                <table border="0" cellpadding="20" cellspacing="0" width="600px" style="background-color:#041E42;">
+                    <tr>
+                        <!-- Icon -->
+                        <td valign="top" width="20" style="color: #ffffff;font-family: Arial;font-size: 50px;font-weight: bold;font-style: italic;">
+                            Actinver
+                        </td>
+                        <!-- Title -->
+                        <td valign="top" style="color:#d8d8d8;font-family:Arial;font-size:10px;line-height:100%;text-align:left;padding-left:0px;">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                <tr>
+                                    <td valign="top" style="padding:9px 0 0 0;font-family: Arial;font-size: 14px;color: #FFF;">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" style="padding:7px 0 0 0;font-family: Arial;font-size: 11px;color: #FFF;">
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- // End Template Preheader \\ -->
+
+                <table border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #DDDDDD;background-color:#FFFFFF;">
+                    <tr>
+                        <td align="center" valign="top">
+                            <!-- // Begin Template Body \\ -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                                <tr>
+                                    <td valign="top">
+
+                                        <!-- // Begin Module: Standard Content \\ -->
+                                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td valign="top" style="background-color:#FFFFFF;">
+                                                    <section mc:edit="std_content00" style="display:block; font-family:Arial;font-size:14px;line-height:150%;text-align:left;">
+                                                        <h2 style="color: red;">PRODUCCION </h2>
+                                                        <h4 style="display:block;font-weight:bold;line-height:100%;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;">${policy.name}</h4>
+                                                        <span style="font-size:12px;color:#8a8a8a;">Evento iniciado: ${action.triggerTime}:</span>
+                                                    </section>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top:0; padding-bottom:0;">
+                                                    <table border="0" cellpadding="10" cellspacing="0" width="100%" style="background-color:#FFFFFF;border:1px solid #DDDDDD;">
+                                                        <tr>
+                                                            <th scope="col" valign="top" width="50" style="background-color:#ebebeb;color:#434e33;font-family:Helvetica;font-size:10px;font-weight:normal;line-height:150%;text-align:right;" mc:edit="data_table_heading00">
+                                                                Count
+                                                            </th>
+                                                            <th scope="col" valign="top" style="background-color:#ebebeb;color:#434e33;font-family:Helvetica;font-size:10px;font-weight:normal;line-height:150%;text-align:left;" mc:edit="data_table_heading01">
+                                                                Event Type
+                                                            </th>
+                                                        </tr>
+                                                        #foreach($eventTypeEntry in $fullEventsByTypeMap.entrySet())
+                                                        <tr mc:repeatable>
+                                                            <td valign="top" style="border-top:1px solid #DDDDDD;border-bottom:0;color:#646464;font-family:Helvetica;font-size:12px;line-height:150%;text-align:right;" mc:edit="data_table_content00">
+                                                                ${eventTypeEntry.getValue().size()}
+                                                            </td>
+                                                            <td valign="top" style="border-top:1px solid #DDDDDD;border-bottom:0;color:#646464;font-family:Helvetica;font-size:12px;line-height:150%;text-align:left;" mc:edit="data_table_content01">
+                                                                ${eventTypeEntry.getKey()}
+                                                            </td>
+                                                        </tr>
+                                                        #end
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            #foreach($eventList in $clampedEventsByTypeMap.values())
+                                            #foreach($event in $eventList)
+                                            <tr mc:repeatable>
+                                                <td valign="top" style="background-color:#FFFFFF; padding-bottom:0px;">
+                                                    <table border="0" cellpadding="10" cellspacing="0" width="100%" style="background-color:#FFFFFF;">
+                                                        <tr>
+                                                            <td style="padding:0px;">
+                                                                <table border="0" cellpadding="10" cellspacing="0" width="100%" style="background-color:#FFFFFF;">
+                                                                    <tr>
+                                                                        <td width="20" style="padding:1px 0 0 0;">
+                                                                            <!-- Event icon -->
+                                                                            <img src="${event.severityImage.mimeContentRef}" alt="${event.severity}" />
+                                                                        </td>
+                                                                        <td style="padding:0 0 0 10px;">
+                                                                            <!-- Event name as a link -->
+                                                                            <a href="${event.deepLink}" style="color: #0000FF; font-family:Arial; font-size:14px; line-height:150%; text-align: left; text-decoration:underline;">
+                                                                                ${event.displayName}
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding:4px 0 0 0;">
+                                                                <!-- Event meta data -->
+                                                                <span style="color: #000000;font-family:Arial; font-size:11px; line-height:150%; text-align: left;">
+                                                                            <b>${event.eventTime}</b>
+                                                                            #if($event.tier)
+                                                                             <b>  | ${event.tier.name} </b>
+                                                                            #end
+                                                                            #if($event.db)
+                                                                            <b>  | ${event.db.name} </b>
+                                                                            #elseif ($event.node)
+                                                                            <b>  | ${event.node.name} </b>
+                                                                            #end
+                                                                        </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding:0px;">
+                                                                <!-- Even summary here -->
+                                                                <p style="color:#747474;font-size:12px;font-family:Arial;line-height:150%; text-align: left; margin-top:5px;">
+                                                                    ${event.eventMessage}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            #end
+                                            #end
+
+                                            #if (${notes})
+                                            <tr>
+                                                <td valign="top" style="background-color:#FFFFFF;">
+                                                    <section mc:edit="std_content01" style="display:block;color:#747474;font-family:Arial;font-size:12px;line-height:150%;text-align:left;">
+                                                        Notes:
+                                                        <br/>
+                                                        ${notes}
+                                                    </section>
+                                                </td>
+                                            </tr>
+                                            #end
+                                        </table>
+                                        <!-- // End Module: Standard Content \\ -->
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- // End Template Body \\ -->
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- // Begin Template Footer \\ -->
+                <table border="0" cellpadding="10" cellspacing="0" width="600">
+                    <tr>
+                        <td valign="top">
+                            <section mc:edit="std_postFooter_content" style="display:block;color:#b5aeae;font-family:Arial;font-size:10px;line-height:100%;text-align:center;">
+                                This is an auto-generated email summarizing events on the "${latestEvent.application.name}" application. You are receiving this because you are configured as a recipient on the "${policy.name}" policy. This is not necessarily an exhaustive list of all events during this time frame. Only those event types enabled in the policy will appear in this message.
+                            </section>
+                        </td>
+                    </tr>
+                </table>
+                <!-- // End Template Footer \\ -->
+
+                <br />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
